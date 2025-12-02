@@ -1,0 +1,30 @@
+name: Keep Vercel API Warm
+
+on:
+  schedule:
+    # 10분마다 실행 - Serverless Functions를 웜 상태로 유지
+    - cron: '*/10 * * * *'
+
+  # GitHub Actions 탭에서 수동 실행 가능
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Movies API
+        run: |
+          echo "🔥 Pinging os-sister Movies API..."
+
+          # /api/movies 엔드포인트를 호출하여 Serverless Function 워밍
+          # ?category=popular: 실제 사용 패턴과 동일하게 호출
+          # || exit 0: 일시적 실패해도 워크플로우는 성공으로 처리
+          curl -f -s -o /dev/null \
+            "https://os-sister.vercel.app/api/movies?category=popular" \
+            || exit 0
+
+          echo "✅ API is now warm and ready!"
+
+      - name: Show last ping time
+        run: echo "⏰ Last pinged at $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
