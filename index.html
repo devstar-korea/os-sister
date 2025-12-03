@@ -9,10 +9,15 @@
     <style>
         /* Footer Styles */
         .footer {
-            background-color: #1F2937;
-            color: #F9FAFB;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
             padding: 60px 0 30px;
             margin-top: 80px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        [data-theme="dark"] .footer {
+            background-color: #0D1117;
         }
 
         .footer-content {
@@ -32,7 +37,7 @@
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 16px;
-            color: #F9FAFB;
+            color: var(--text-primary);
         }
 
         .footer-section ul {
@@ -46,14 +51,14 @@
         }
 
         .footer-section ul li a {
-            color: #9CA3AF;
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s;
         }
 
         .footer-section ul li a:hover {
-            color: #7C3AED;
+            color: var(--purple);
         }
 
         .footer-brand {
@@ -70,18 +75,18 @@
         .footer-brand .logo span {
             font-size: 18px;
             font-weight: 600;
-            color: #F9FAFB;
+            color: var(--text-primary);
         }
 
         .footer-description {
-            color: #9CA3AF;
+            color: var(--text-secondary);
             font-size: 14px;
             line-height: 1.6;
             max-width: 300px;
         }
 
         .footer-bottom {
-            border-top: 1px solid #374151;
+            border-top: 1px solid var(--bg-secondary);
             padding-top: 24px;
             display: flex;
             justify-content: space-between;
@@ -90,8 +95,12 @@
             gap: 16px;
         }
 
+        [data-theme="dark"] .footer-bottom {
+            border-top-color: #374151;
+        }
+
         .footer-copyright {
-            color: #9CA3AF;
+            color: var(--text-secondary);
             font-size: 14px;
         }
 
@@ -101,14 +110,14 @@
         }
 
         .footer-links a {
-            color: #9CA3AF;
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: #7C3AED;
+            color: var(--purple);
         }
 
         @media (max-width: 768px) {
@@ -150,7 +159,7 @@
             font-size: 24px;
             font-weight: 600;
             margin-bottom: 24px;
-            color: #1F2937;
+            color: var(--text-primary);
         }
 
         /* Hero Image Styles */
@@ -179,11 +188,22 @@
                 <li><a href="#capabilities">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
             </ul>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="navbar-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+                    </svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -418,7 +438,9 @@
                     <iframe
                         src="https://www.youtube.com/embed/C3geUfBR2js"
                         title="AI Tech Presentation"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen>
                     </iframe>
                 </div>
