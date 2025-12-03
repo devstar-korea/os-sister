@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(start \"\" \"C:\\Users\\5800X\\Projects\\os-project\\todo-firebase\\index.html\")",
-      "Bash(firebase:*)"
+      "Bash(firebase:*)",
+      "Bash(where cursor:*)",
+      "Bash(dir \"C:\\Users\\5800X\\AppData\\Roaming\\Cursor\\User\" /b)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

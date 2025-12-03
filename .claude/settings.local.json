@@ -3,7 +3,22 @@
     "allow": [
       "Bash(code .)",
       "Bash(start index.html)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(dir /b)",
+      "Bash(findstr:*)",
+      "Bash(dir /s /b \"C:\\Users\\5800X\\.claude\\commands\")",
+      "Bash(dir /s /b \"C:\\Users\\5800X\\Projects\\*research-phase*.md\")",
+      "Bash(dir /s /b \"C:\\Users\\5800X\\Projects\\*dev-phase*.md\")",
+      "Bash(dir /s /b \"C:\\Users\\5800X\\*commands*\")",
+      "Bash(powershell -Command:*)",
+      "Bash(start:*)",
+      "WebFetch(domain:os-sister.vercel.app)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(vercel whoami:*)",
+      "Bash(npx vercel:*)",
+      "Bash(gh api:*)",
+      "Bash(cat:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
