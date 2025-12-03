@@ -291,7 +291,7 @@ body {
     flex: 1 1 300px;
     min-width: 280px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -381,7 +381,7 @@ body {
     flex: 1 1 300px;
     min-width: 280px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     order: 2;
 }
