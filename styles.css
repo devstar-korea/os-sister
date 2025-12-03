@@ -741,8 +741,13 @@ body {
     }
 
     .theme-toggle {
-        width: 36px;
-        height: 36px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .theme-toggle svg {
+        width: 14px;
+        height: 14px;
     }
 
     .hero-buttons {
