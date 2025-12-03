@@ -4,7 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markus Räikkönen - Product Designer</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Footer Styles */
+        .footer {
+            background-color: #1F2937;
+            color: #F9FAFB;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #F9FAFB;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #7C3AED;
+        }
+
+        .footer-brand {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand .logo span {
+            font-size: 18px;
+            font-weight: 600;
+            color: #F9FAFB;
+        }
+
+        .footer-description {
+            color: #9CA3AF;
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-copyright {
+            color: #9CA3AF;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #7C3AED;
+        }
+
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* YouTube Video Embed Styles */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .portfolio-showcase .video-wrapper {
+            padding: 40px 0;
+        }
+
+        .portfolio-showcase .video-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1F2937;
+        }
+
+        /* Hero Image Styles */
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -14,14 +170,14 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="10" fill="#7C3AED"/>
                 </svg>
-                <span>Grevins</span>
+                <span>AISA PORTFOLIO</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#services-alt">Process</a></li>
+                <li><a href="#capabilities">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="hamburger" id="hamburger">
                 <span></span>
@@ -39,8 +195,7 @@
                     <p class="greeting">AI System Architect</p>
                     <h1 class="hero-title">AISA</h1>
                     <p class="hero-description">
-                        AI 기반의 확장 가능한 시스템을 설계하여 비즈니스 가치를 창출합니다.<br>
-                        최적화된 인프라와 MLOps에 집중합니다.
+                        AI 기반으로 비즈니스 시스템을 설계하여 새로운 가치를 창출합니다.
                     </p>
                     <div class="hero-buttons">
                         <button class="btn btn-primary">Contact</button>
@@ -61,7 +216,7 @@
                 <div class="hero-image">
                     <div class="image-wrapper">
                         <div class="image-placeholder">
-                            <div class="person-icon">👨‍💼</div>
+                            <img src="profile.png" alt="Profile Photo">
                         </div>
                         <div class="decorative-circle circle-1"></div>
                         <div class="decorative-circle circle-2"></div>
@@ -78,10 +233,9 @@
                 <!-- Highlight Card (Left Side) -->
                 <div class="service-card highlight">
                     <div class="services-heading">
-                        <h2>Better design,<br>better experiences</h2>
-                        <p>Crafting intuitive and engaging digital products that users love.
-                        Every pixel matters in creating exceptional user experiences.</p>
-                        <button class="btn btn-primary">Learn More</button>
+                        <h2>AI 시스템으로,<br>비즈니스 혁신을</h2>
+                        <p>비즈니스 요구사항을 AI 기반 시스템으로 전환하여 실질적인 가치를 창출합니다. 기술과 비즈니스 사이의 간극을 체계적 사고로 연결합니다.</p>
+                        <a href="#capabilities" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
 
@@ -93,7 +247,7 @@
                                 <path d="M20 5L25 15L35 16.5L27.5 24L29.5 35L20 29.5L10.5 35L12.5 24L5 16.5L15 15L20 5Z" fill="#7C3AED"/>
                             </svg>
                         </div>
-                        <h3>UX Research</h3>
+                        <h3>AI 전략 수립</h3>
                     </div>
 
                     <div class="service-card">
@@ -103,7 +257,7 @@
                                 <path d="M14 8L14 12M26 8L26 12M8 18L32 18" stroke="#1F2937" stroke-width="2"/>
                             </svg>
                         </div>
-                        <h3>Visual Design</h3>
+                        <h3>시스템 설계</h3>
                     </div>
 
                     <div class="service-card">
@@ -113,7 +267,7 @@
                                 <circle cx="20" cy="20" r="6" fill="#7C3AED"/>
                             </svg>
                         </div>
-                        <h3>User Testing</h3>
+                        <h3>통합 구현</h3>
                     </div>
 
                     <div class="service-card">
@@ -125,18 +279,18 @@
                                 <rect x="22" y="22" width="10" height="10" fill="#7C3AED"/>
                             </svg>
                         </div>
-                        <h3>Prototyping</h3>
+                        <h3>성능 최적화</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Additional Services Section -->
+    <!-- Process Section (두 번째 Services 섹션을 Process로 변경) -->
     <section class="services-alt" id="services-alt">
         <div class="container">
             <div class="services-alt-grid">
-                <!-- Service Cards Container (Left Side) -->
+                <!-- Process Cards Container (Left Side) -->
                 <div class="service-cards-alt-wrapper">
                     <div class="service-card-alt">
                         <div class="service-icon">
@@ -144,17 +298,7 @@
                                 <path d="M20 5L25 15L35 16.5L27.5 24L29.5 35L20 29.5L10.5 35L12.5 24L5 16.5L15 15L20 5Z" fill="#7C3AED"/>
                             </svg>
                         </div>
-                        <h3>UX Research</h3>
-                    </div>
-
-                    <div class="service-card-alt">
-                        <div class="service-icon">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <rect x="10" y="10" width="20" height="20" stroke="#1F2937" stroke-width="2" fill="none"/>
-                                <circle cx="20" cy="20" r="6" fill="#7C3AED"/>
-                            </svg>
-                        </div>
-                        <h3>User Testing</h3>
+                        <h3>요구사항 분석</h3>
                     </div>
 
                     <div class="service-card-alt">
@@ -164,7 +308,17 @@
                                 <path d="M14 8L14 12M26 8L26 12M8 18L32 18" stroke="#1F2937" stroke-width="2"/>
                             </svg>
                         </div>
-                        <h3>Visual Design</h3>
+                        <h3>설계 및 검증</h3>
+                    </div>
+
+                    <div class="service-card-alt">
+                        <div class="service-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect x="10" y="10" width="20" height="20" stroke="#1F2937" stroke-width="2" fill="none"/>
+                                <circle cx="20" cy="20" r="6" fill="#7C3AED"/>
+                            </svg>
+                        </div>
+                        <h3>구축 및 통합</h3>
                     </div>
 
                     <div class="service-card-alt">
@@ -176,17 +330,16 @@
                                 <rect x="22" y="22" width="10" height="10" fill="#7C3AED"/>
                             </svg>
                         </div>
-                        <h3>Prototyping</h3>
+                        <h3>최적화 및 운영</h3>
                     </div>
                 </div>
 
                 <!-- Highlight Card (Right Side) -->
                 <div class="service-card-alt highlight">
                     <div class="services-heading">
-                        <h2>Better design,<br>better experiences</h2>
-                        <p>Crafting intuitive and engaging digital products that users love.
-                        Every pixel matters in creating exceptional user experiences.</p>
-                        <button class="btn btn-primary">Learn More</button>
+                        <h2>체계적인 프로세스로,<br>안정적인 결과를</h2>
+                        <p>검증된 4단계 방법론을 통해 리스크를 최소화하고 예측 가능한 성과를 보장합니다. 각 단계마다 명확한 산출물과 검증 절차를 거쳐 프로젝트를 진행합니다.</p>
+                        <a href="#capabilities" class="btn btn-primary">Learn More</a>
                         <div class="decorative-dots-alt">
                             <div class="dot"></div>
                             <div class="dot"></div>
@@ -201,71 +354,44 @@
         </div>
     </section>
 
-    <!-- Portfolio Showcase Section -->
-    <section class="portfolio-showcase">
-        <div class="container">
-            <div class="showcase-content">
-                <div class="showcase-image">
-                    <div class="image-wrapper-showcase">
-                        <div class="image-placeholder-showcase">
-                            <div class="person-icon">👨‍💼</div>
-                        </div>
-                        <div class="decorative-bar"></div>
-                    </div>
-                    <div class="decorative-dots-grid">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Capabilities Section -->
+    <!-- Capabilities Section (Skills - Portfolio 앞으로 이동) -->
     <section class="capabilities" id="capabilities">
         <div class="container">
             <div class="capabilities-header">
                 <p class="section-label">MY SKILLS</p>
-                <h2>Things I can do for<br>my clients</h2>
+                <h2>클라이언트를 위해<br>할 수 있는 일</h2>
                 <p class="section-description">
-                    Transforming ideas into exceptional digital experiences through comprehensive design services.
+                    AI 기술을 활용한 비즈니스 자동화와 시스템 최적화 서비스를 제공합니다.
                 </p>
                 <div class="capabilities-buttons">
                     <button class="btn btn-primary">Hire Me</button>
-                    <button class="btn btn-secondary">Learn More</button>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
 
             <div class="capabilities-grid">
                 <div class="capability-card">
-                    <h3>Brand Identity</h3>
-                    <p>Creating unique and memorable brand identities that resonate with your target audience and stand out in the market.</p>
-                    <a href="#" class="learn-more-link">Learn More →</a>
+                    <h3>AI 워크플로우 설계</h3>
+                    <p>비즈니스 요구사항을 AI 기반 자동화 시스템으로 전환합니다. 이커머스, 콘텐츠 제작, 마케팅 프로세스의 효율성을 극대화합니다.</p>
+                    <a href="https://www.anthropic.com/news/claude-3-5-sonnet" class="learn-more-link">Learn More →</a>
                 </div>
 
                 <div class="capability-card">
-                    <h3>Product Design</h3>
-                    <p>Designing user-centered products that combine beautiful aesthetics with intuitive functionality and usability.</p>
-                    <a href="#" class="learn-more-link">Learn More →</a>
+                    <h3>시스템 아키텍처 구축</h3>
+                    <p>확장 가능하고 비용 효율적인 AI 시스템을 설계합니다. API 통합, 데이터 파이프라인, 자동화 인프라를 체계적으로 구성합니다.</p>
+                    <a href="https://aws.amazon.com/architecture/" class="learn-more-link">Learn More →</a>
                 </div>
 
                 <div class="capability-card">
-                    <h3>Interaction Design</h3>
-                    <p>Crafting engaging interactions and animations that enhance user experience and make products delightful to use.</p>
-                    <a href="#" class="learn-more-link">Learn More →</a>
+                    <h3>Spec-Driven Development</h3>
+                    <p>명확한 요구사항 정의와 구조화된 문서를 통해 프로젝트의 일관성을 유지합니다. Spec Drift를 방지하고 효율적인 협업 환경을 구축합니다.</p>
+                    <a href="https://www.agilealliance.org/glossary/specification-by-example/" class="learn-more-link">Learn More →</a>
                 </div>
 
                 <div class="capability-card">
-                    <h3>App Design</h3>
-                    <p>Developing mobile and web applications with focus on user experience, performance, and modern design principles.</p>
-                    <a href="#" class="learn-more-link">Learn More →</a>
+                    <h3>크로스보더 이커머스 자동화</h3>
+                    <p>중국과 한국 시장을 연결하는 자동화 솔루션을 개발합니다. 상품 등록, 주문 처리, 재고 관리를 통합하여 운영 효율성을 극대화합니다.</p>
+                    <a href="https://www.shopify.com/enterprise/ecommerce-automation" class="learn-more-link">Learn More →</a>
                 </div>
             </div>
 
@@ -282,6 +408,89 @@
             </div>
         </div>
     </section>
+
+    <!-- Portfolio Showcase Section with YouTube Video -->
+    <section class="portfolio-showcase" id="portfolio">
+        <div class="container">
+            <div class="video-wrapper">
+                <h2 class="video-title">AI Technology Showcase</h2>
+                <div class="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/Pb6XHGi542A"
+                        title="AI Tech Presentation"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#7C3AED"/>
+                            </svg>
+                            <span>AISA PORTFOLIO</span>
+                        </div>
+                        <p class="footer-description">
+                            AI 기반으로 비즈니스 시스템을 설계하여 새로운 가치를 창출합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#services-alt">Process</a></li>
+                        <li><a href="#capabilities">Skills</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">AI 전략 수립</a></li>
+                        <li><a href="#services">시스템 설계</a></li>
+                        <li><a href="#services">통합 구현</a></li>
+                        <li><a href="#services">성능 최적화</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Links -->
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="mailto:contact@aisa.com">Email</a></li>
+                        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 AISA Portfolio. All rights reserved.
+                </p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

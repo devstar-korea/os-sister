@@ -62,6 +62,10 @@ body {
     color: var(--dark);
     font-weight: 500;
     transition: color 0.3s;
+    padding: 12px 8px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-menu a:hover {
@@ -110,21 +114,29 @@ body {
     pointer-events: none;
 }
 
+/* Auto Layout - Hero Content */
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
     align-items: center;
     background: var(--white);
-    padding: 60px;
+    padding: clamp(20px, 5vw, 60px);
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.1);
     position: relative;
 }
 
 .hero-text {
-    position: relative;
+    flex: 1 1 300px;
+    min-width: 280px;
 }
+
+.hero-image {
+    flex: 1 1 300px;
+    min-width: 280px;
+}
+
 
 .greeting {
     font-size: 14px;
@@ -135,7 +147,7 @@ body {
 }
 
 .hero-title {
-    font-size: 48px;
+    font-size: clamp(28px, 5vw + 1rem, 48px);
     font-weight: 800;
     color: var(--dark);
     margin-bottom: 20px;
@@ -158,13 +170,16 @@ body {
 }
 
 .btn {
-    padding: 12px 30px;
+    padding: 14px 32px;
+    min-height: 48px;
     border-radius: 25px;
     border: none;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
-    font-size: 14px;
+    font-size: clamp(14px, 2vw, 16px);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -264,23 +279,25 @@ body {
     background: var(--light-gray);
 }
 
+/* Auto Layout - Services Grid */
 .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     align-items: stretch;
 }
 
 .service-cards-wrapper {
+    flex: 1 1 300px;
+    min-width: 280px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
 }
 
 .service-card {
     background: var(--white);
-    padding: 40px 30px;
+    padding: clamp(24px, 4vw, 40px);
     border-radius: 15px;
     text-align: center;
     transition: all 0.3s;
@@ -289,7 +306,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 1;
+    min-height: 120px;
 }
 
 .service-card:hover {
@@ -310,19 +327,21 @@ body {
 }
 
 .service-card.highlight {
+    flex: 1 1 300px;
+    min-width: 280px;
     background: linear-gradient(135deg, var(--purple) 0%, #6D28D9 100%);
     color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: left;
-    padding: 60px;
+    padding: clamp(30px, 5vw, 60px);
     aspect-ratio: auto;
-    min-height: 500px;
+    min-height: auto;
 }
 
 .services-heading h2 {
-    font-size: 36px;
+    font-size: clamp(24px, 4vw + 0.5rem, 36px);
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -350,23 +369,26 @@ body {
     background: var(--white);
 }
 
+/* Auto Layout - Services Alt Grid */
 .services-alt-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     align-items: stretch;
 }
 
 .service-cards-alt-wrapper {
+    flex: 1 1 300px;
+    min-width: 280px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    order: 2;
 }
 
 .service-card-alt {
     background: var(--light-gray);
-    padding: 40px 30px;
+    padding: clamp(24px, 4vw, 40px);
     border-radius: 15px;
     text-align: center;
     transition: all 0.3s;
@@ -375,7 +397,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 1;
+    min-height: 120px;
 }
 
 .service-card-alt:hover {
@@ -385,16 +407,19 @@ body {
 }
 
 .service-card-alt.highlight {
+    flex: 1 1 300px;
+    min-width: 280px;
     background: linear-gradient(135deg, var(--purple) 0%, #6D28D9 100%);
     color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: left;
-    padding: 60px;
+    padding: clamp(30px, 5vw, 60px);
     aspect-ratio: auto;
-    min-height: 500px;
+    min-height: auto;
     position: relative;
+    order: 1;
 }
 
 .decorative-dots-alt {
@@ -499,7 +524,7 @@ body {
 }
 
 .capabilities-header h2 {
-    font-size: 42px;
+    font-size: clamp(26px, 5vw + 0.5rem, 42px);
     font-weight: 800;
     color: var(--dark);
     margin-bottom: 20px;
@@ -521,16 +546,19 @@ body {
     margin-top: 30px;
 }
 
+/* Auto Layout - Capabilities Grid */
 .capabilities-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 60px;
 }
 
 .capability-card {
+    flex: 1 1 280px;
+    min-width: 250px;
     background: var(--light-gray);
-    padding: 40px;
+    padding: clamp(24px, 4vw, 40px);
     border-radius: 15px;
     transition: all 0.3s;
 }
@@ -561,7 +589,10 @@ body {
     font-weight: 600;
     font-size: 14px;
     transition: all 0.3s;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 0;
 }
 
 .learn-more-link:hover {
@@ -578,50 +609,11 @@ body {
     right: 100px;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .hero-content {
-        padding: 40px;
-        gap: 40px;
-    }
+/* ======================
+   RESPONSIVE - Auto Layout
+   ====================== */
 
-    .hero-title {
-        font-size: 40px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-cards-wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-card.highlight {
-        min-height: 400px;
-    }
-
-    .services-alt-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-cards-alt-wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-card-alt.highlight {
-        min-height: 400px;
-    }
-
-    .capabilities-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .decorative-dots-bottom {
-        right: 40px;
-    }
-}
-
+/* 태블릿 이하 (768px) - 모바일 메뉴 */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -657,52 +649,8 @@ body {
         transform: rotate(-45deg) translate(7px, -7px);
     }
 
-    .hero-content {
-        grid-template-columns: 1fr;
-        padding: 30px;
-        gap: 30px;
-    }
-
-    .hero-title {
-        font-size: 32px;
-    }
-
     .hero-buttons {
         flex-direction: column;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-cards-wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-card.highlight {
-        padding: 40px;
-        min-height: 350px;
-    }
-
-    .services-heading h2 {
-        font-size: 28px;
-    }
-
-    .services-alt-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-cards-alt-wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-card-alt.highlight {
-        padding: 40px;
-        min-height: 350px;
-    }
-
-    .capabilities-header h2 {
-        font-size: 32px;
     }
 
     .capabilities-buttons {
@@ -716,84 +664,21 @@ body {
     }
 
     .decorative-dots-bottom {
-        right: 20px;
+        display: none;
     }
 }
 
+/* 모바일 (480px 이하) */
 @media (max-width: 480px) {
     .hero {
         padding: 30px 0;
     }
 
-    .hero-content {
-        padding: 20px;
-    }
-
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .hero-description {
-        font-size: 14px;
-    }
-
     .btn {
         width: 100%;
-        padding: 12px 20px;
     }
 
-    .image-placeholder {
-        border-radius: 0 0 40% 0;
-    }
-
-    .person-icon {
-        font-size: 80px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-cards-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card.highlight {
-        min-height: 300px;
-        padding: 30px;
-    }
-
-    .services-heading h2 {
-        font-size: 24px;
-    }
-
-    .services-heading p {
-        font-size: 14px;
-    }
-
-    .service-cards-alt-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card-alt.highlight {
-        min-height: 300px;
-        padding: 30px;
-    }
-
-    .capabilities-header h2 {
-        font-size: 28px;
-    }
-
-    .capability-card {
-        padding: 30px;
-    }
-
-    .capability-card h3 {
-        font-size: 20px;
-    }
-
-    .decorative-dots-bottom {
-        right: 20px;
-        bottom: 20px;
+    .decorative-circle {
+        display: none;
     }
 }
