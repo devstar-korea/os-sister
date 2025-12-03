@@ -7,7 +7,13 @@
       "Bash(dir \"C:\\Users\\5800X\\AppData\\Roaming\\Cursor\\User\" /b)",
       "Bash(find:*)",
       "SlashCommand(/dev-phase2)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(vercel --version:*)",
+      "Bash(vercel whoami:*)",
+      "Bash(cat:*)",
+      "Bash(vercel link:*)",
+      "Bash(vercel deploy:*)",
+      "Bash(vercel env:*)"
     ],
     "deny": [],
     "ask": []
