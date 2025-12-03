@@ -1,6 +1,22 @@
+# Vercel
 .vercel
+
+# Environment
+.env
 .env*.local
-node_modules
+
+# Node
+node_modules/
+
+# Firebase
+.firebase/
 
 # Backup files
 *_backup.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Legacy (이동 후 원본 - Claude Code 작업 디렉토리)
+/todo-firebase/
