@@ -5,7 +5,9 @@
       "Bash(firebase:*)",
       "Bash(where cursor:*)",
       "Bash(dir \"C:\\Users\\5800X\\AppData\\Roaming\\Cursor\\User\" /b)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "SlashCommand(/dev-phase2)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []

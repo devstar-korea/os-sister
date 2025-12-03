@@ -18,7 +18,9 @@
       "Bash(npx vercel:*)",
       "Bash(gh api:*)",
       "Bash(cat:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Skill(claude-skill-rules)",
+      "Skill(pdf)"
     ],
     "deny": [],
     "ask": []
