@@ -13,7 +13,10 @@
       "Bash(cat:*)",
       "Bash(vercel link:*)",
       "Bash(vercel deploy:*)",
-      "Bash(vercel env:*)"
+      "Bash(vercel env:*)",
+      "Bash(vercel ls:*)",
+      "Bash(vercel:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
