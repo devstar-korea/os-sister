@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"C:\\Users\\5800X\\Projects\\os-project\\todo-firebase\\index.html\")",
+      "Bash(firebase:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
